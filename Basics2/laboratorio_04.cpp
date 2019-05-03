@@ -1,10 +1,8 @@
-int area ( int length , int width ); 
-int main() 
-{ 
-	int x = area(2,3); 
+#include <iostream>
+using namespace std; 
+double  area (double x , double y) 
+{return x*y ; }
+int main ( )
+{
+  int x = area (2,3) ;
 }
-//int area(int x, int y) { return x*y ; } // es esta 
-// Funciones con mismo nombre pero diferentes tipos 
-// no coinciden y son ignoradas. 
-double area(double x, double y) { return x*y ; } 
-int area(int x, int y, char unit) { return x*y ; } 
