@@ -1,16 +1,23 @@
-{// Si no separamos especificamente el error seria: 
-
-	if (x<=0 | | y<=0) throw 
-		runtime error(”argumento no positivo”); 
-		// | | significa ”o” 
-	int area1 = area(x,y); 
-	if (z<=2) 
-		throw
-			runtime error(”argumento no positivo”);
-	int area2 = framed area(1,z); 
-	if (y<=2 | | z<=2) 
-		throw
-			runtime error(”argumento no positivo”); 
-	int area3 = framed area(y,z); 
-	double ratio = double(area1)/area3; 
-	//convertir a double } 
+#include <iostream>
+using namespace std; 
+class Bad_area { } ; 
+int area( int length,int width )
+{
+if ( length <=0 || width <=0) 
+  throw Bad_area { } ;
+return length*width ;
+}
+int main ( )
+try
+{
+    int x =-1;
+    int y = 2 ;
+    int z = 4 ;
+    int area1 = area( x , y ) ;
+    int area2 = framed_area ( 1 , z ) ;
+    int area3 = framed_area ( y , z ) ;
+    double ratio = double ( area1 )/area3 ;
+}
+catch (Bad_area) {
+  cout<<"Opps, argumento invalido para area ()" ;
+}
